@@ -11,11 +11,19 @@ import (
 	"sync"
 	"time"
 
+<<<<<<< HEAD
+=======
+	"io"
+
+>>>>>>> c2643d5f7e49881f522a178f5279bcf77ddc9df8
 	"github.com/influxdata/telegraf"
 	"github.com/influxdata/telegraf/internal"
 	"github.com/influxdata/telegraf/internal/tls"
 	"github.com/influxdata/telegraf/plugins/inputs"
+<<<<<<< HEAD
 	"io"
+=======
+>>>>>>> c2643d5f7e49881f522a178f5279bcf77ddc9df8
 )
 
 type Tengine struct {
@@ -23,7 +31,10 @@ type Tengine struct {
 	ResponseTimeout internal.Duration
 	tls.ClientConfig
 
+<<<<<<< HEAD
 	// HTTP client
+=======
+>>>>>>> c2643d5f7e49881f522a178f5279bcf77ddc9df8
 	client *http.Client
 }
 
@@ -31,6 +42,7 @@ var sampleConfig = `
   # An array of Tengine reqstat module URI to gather stats.
   urls = ["http://127.0.0.1/us"]
 
+<<<<<<< HEAD
   ## Optional TLS Config
   tls_ca = "/etc/telegraf/ca.pem"
   tls_cert = "/etc/telegraf/cert.cer"
@@ -40,6 +52,17 @@ var sampleConfig = `
 
   # HTTP response timeout (default: 5s)
   response_timeout = "5s"
+=======
+  # HTTP response timeout (default: 5s)
+  # response_timeout = "5s"
+
+  ## Optional TLS Config
+  # tls_ca = "/etc/telegraf/ca.pem"
+  # tls_cert = "/etc/telegraf/cert.cer"
+  # tls_key = "/etc/telegraf/key.key"
+  ## Use TLS but skip chain & host verification
+  # insecure_skip_verify = false
+>>>>>>> c2643d5f7e49881f522a178f5279bcf77ddc9df8
 `
 
 func (n *Tengine) SampleConfig() string {
